@@ -9,6 +9,7 @@ public class Subscriber {
     private boolean isActive;
     private int countWishes;
 
+
     public Subscriber(){ }
 
     public Subscriber(String phone){

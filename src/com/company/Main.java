@@ -1,7 +1,10 @@
 package com.company;
 
+import com.company.models.Recipient;
 import com.company.models.Subscriber;
+import com.company.service.RecipientService;
 import com.company.service.WishService;
+import com.company.service.impl.RecipientServiceImpl;
 import com.company.service.impl.WishServiceImpl;
 
 import java.util.Scanner;
@@ -12,6 +15,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         WishService wishService = new WishServiceImpl();
+        RecipientService recipientService = new RecipientServiceImpl();
+
         while (true){
             System.out.println("Выберите действие:");
             System.out.println(" "+
@@ -31,6 +36,12 @@ public class Main {
                     System.out.println(" Введите текст который хотите отправить");
                     String text = scanner.next();
                     wishService.createWish(text, senderPhone, receiptPhone);
+                    break;
+                case 2:
+                    System.out.println("Для просмотра входящих сообщения введите свой номер");
+                    System.out.print("Номер : ");
+                    String MyPhone = scanner.next();
+                    recipientService.seeMyMessages(MyPhone);
                     break;
                 case 3:
                     System.out.println("До свидания!");

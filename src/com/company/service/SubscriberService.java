@@ -6,5 +6,4 @@ public interface SubscriberService {
 
     Subscriber findOrCreateSubscriber(String phone);
 
-
 }

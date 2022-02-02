@@ -5,7 +5,8 @@ import com.company.service.SubscriberService;
 
 public class SubscriberServiceImpl implements SubscriberService {
 
-    private Subscriber[] subscribers = new Subscriber[50];
+    protected Subscriber[] subscribers = new Subscriber[50];
+
 
     @Override
     public Subscriber findOrCreateSubscriber(String phone) {
@@ -27,4 +28,5 @@ public class SubscriberServiceImpl implements SubscriberService {
         }
         throw new RuntimeException("Мавив переполнен");
     }
+
 }
